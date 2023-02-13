@@ -1,7 +1,18 @@
-<h1>Blog</h1>
-<ul>
-  <% @blogs.each do |blog| %>
-    <li><%= link_to blog.title, blog%></li>
-  <% end %>
-</ul>
-<%= link_to 'Add new blog', new_blog_path %>
+<div class="flex flex-col gap-5">
+  <div class="flex gap-2 items-center">
+    <h1 class="font-bold">Blog</h1>
+    <%= link_to '+ Post', new_blog_path %>
+  </div>
+  <div class="flex gap-4">
+    <% @blogs.each do |blog| %>
+      <%= link_to blog do %>
+        <div class="hover:bg-gray-300 border rounded-lg p-4 w-48">
+          <div class="flex flex-col gap-2">
+            <p class="text-lg"><%= blog.title %></p>
+            <p class="text-xs"><%= "#{blog.created_at.strftime('%m/%d/%Y')}"%></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
