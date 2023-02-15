@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root 'blogs#index'
+  root 'pages#index'
+
+  # React Router needs a wildcard
+  get 'react-router(/*all)', to: 'pages#index'
 
   resources :blogs
 end

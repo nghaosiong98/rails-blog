@@ -11,19 +11,19 @@ def run(process)
   args = [*ARGV]
   args.shift
   puts "Using #{process}"
-  exec "#{process} start -f Procfile.dev"
+  exec "#{process} start -f Procfile.dev-static", args.join(" ")
 rescue Errno::ENOENT
   warn <<~MSG
     ERROR:
-    Please ensure `Procfile.dev` exist in your project!
+    Please ensure `Procfile.dev-static` exist in your project!
   MSG
   exit!
 end
 
-if installed? 'overmind'
-  run 'overmind'
-elsif installed? 'foreman'
-  run 'foreman'
+if installed? "overmind"
+  run "overmind"
+elsif installed? "foreman"
+  run "foreman"
 else
   warn <<~MSG
     NOTICE:
