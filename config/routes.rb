@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   # React Router needs a wildcard
   get 'create-blog', to: 'pages#index'
+  get 'read-blog/:id', to: 'pages#index'
 
   resources :blogs
 end

@@ -27,4 +27,11 @@
   h1 {
     @apply text-3xl font-onest;
   }
+  h2 {
+    @apply text-2xl font-onest;
+  }
+
+  input {
+    @apply text-sm
+  }
 }
