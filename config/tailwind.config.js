@@ -6,12 +6,12 @@ module.exports = {
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
     './app/views/**/*.{erb,haml,html,slim}',
-    './client/app/**/*.jsx'
+    './client/app/**/*.{jsx,tsx}'
   ],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        sans: ['onest', ...defaultTheme.fontFamily.sans],
         onest: ['onest']
       },
     },
